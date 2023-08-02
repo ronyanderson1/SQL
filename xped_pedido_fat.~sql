@@ -1,0 +1,6 @@
+Select t.pedf_xped_id, t.*, t.rowid from PEDIDO_FAT t
+Where t.pedf_liqu_emp_id = 2
+and t.pedf_xped_id is not null
+and t.pedf_liqu_id = 93994
+
+--And t.pedf_id = 185465

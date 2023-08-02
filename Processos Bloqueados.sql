@@ -1,0 +1,20 @@
+SELECT 'USR WIN: ' || S1.OSUSER || ' - ' || 'USR SAIB: ' || S1.USERNAME || ' - ' || S1.MACHINE || ' ( SessionID=' || S1.SID || ' ) ' BLOQUEADOR
+      ,'USR WIN: ' || S2.OSUSER || ' - ' || 'USR SAIB: ' || S2.USERNAME || ' - ' || S2.MACHINE || ' ( SessionID=' || S2.SID || ' ) ' BLOQUEADO
+      ,S1.PROGRAM PROGRAMA_BLOQUEADOR 
+      ,S2.PROGRAM PROGRAMA_BLOQUEADO 
+      ,C.OBJECT_NAME NOME_OBJETO 
+      ,C.OBJECT_TYPE TIPO_OBJETO
+FROM  V$LOCK L1, 
+      V$SESSION S1, 
+      V$LOCK L2, 
+      V$SESSION S2, 
+      V$LOCKED_OBJECT A, 
+      DBA_OBJECTS C
+WHERE S1.SID      = L1.SID
+AND   S2.SID      = L2.SID
+AND   L1.BLOCK    = 1 
+AND   L2.REQUEST  > 0
+AND   L1.ID1      = L2.ID1
+AND   L2.ID2      = L2.ID2
+AND   S2.SID      = A.SESSION_ID
+AND   A.OBJECT_ID = C.OBJECT_ID

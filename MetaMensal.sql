@@ -1,0 +1,2 @@
+select * from PBIX_METAS_GERENTE t
+FOR UPDATE

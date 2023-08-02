@@ -1,0 +1,15 @@
+select t.*, t.rowid from CLIENTE_V t
+where t.cliv_cli_emp_id = 2
+and t.cliv_cli_id in (15619,
+18987,
+2615,
+3311,
+14736,
+18500,
+19022,
+17167,
+3318,
+18830,
+17224,
+99
+)

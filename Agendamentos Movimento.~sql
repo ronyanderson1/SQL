@@ -1,0 +1,4 @@
+select t.*, t.rowid from MI_AGENDAMENTOS_MOVIMENTO t
+where t.mi_dta_cad >= '02/03/2015'
+order by t.mi_dta_cad asc
+/*and t.mi_dta_cad < '01/06/2015'*/

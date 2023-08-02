@@ -1,0 +1,2 @@
+select t.*, t.rowid from PEDIDO_FAT_LOGISTICA t
+order by t.pedl_dta_agend_cli asc

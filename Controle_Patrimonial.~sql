@@ -1,0 +1,3 @@
+select t.*, t.rowid from PAT_BEM t
+WHERE T.BEM_ID BETWEEN 1951 AND 1955
+AND T.BEM_EMP_ID = 2

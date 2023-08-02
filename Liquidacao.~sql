@@ -1,0 +1,3 @@
+select t.liqu_dta_emis, t.liqu_dta_sai, t.liqu_dta_cad, t.liqu_placa_transp, t.liqu_nome_transp from LIQUIDACAO t
+order by t.liqu_dta_cad asc
+ 
